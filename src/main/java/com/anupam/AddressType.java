@@ -1,6 +1,7 @@
 package com.anupam;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class AddressType {
     @Id @Column(name = "address_type_code")
     int addressTypeCode;

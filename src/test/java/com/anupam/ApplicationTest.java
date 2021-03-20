@@ -10,8 +10,9 @@ import java.util.List;
 
 public class ApplicationTest {
 
-/*    static List<Person> participants= new ArrayList<Person>();
+    /*
 
+    static List<Person> participants= new ArrayList<Person>();
     @BeforeClass
     public void setup(){
         participants.add(new Person("123","Anupam","kumar","130788"));
@@ -21,8 +22,7 @@ public class ApplicationTest {
         for (Person entry:participants){
             Application.savePerson(entry);
         }
-    }*/
-
+    }
 
     @Test
     public void should_save_participants() {
@@ -30,5 +30,16 @@ public class ApplicationTest {
         System.out.println(person);
         Assert.assertEquals("Shubhu",person.getFirstname());
     }
-
+    */
+    @Test
+    public void should_save_participants() {
+        Person person = new Person("125","Anupam","anand","241095");
+        Application.savePerson(person);
+    }
+    @Test
+    public void should_display_participants() {
+        Person person = Application.getPerson("124");
+        System.out.println(person);
+        Assert.assertEquals("Shubhu",person.getFirstname());
+    }
 }

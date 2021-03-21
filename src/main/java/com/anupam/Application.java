@@ -8,25 +8,22 @@ import org.hibernate.cfg.Configuration;
 
 
 public class Application {
-
-
-
-    public static void savePerson (Person person){
-        Configuration config = new Configuration().configure().addAnnotatedClass(Person.class);
-        SessionFactory sessionFactory = config.buildSessionFactory();
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(person);
+    public static void save (Object object){
+        var config = new Configuration().configure().addAnnotatedClass(object.getClass());
+        var sessionFactory = config.buildSessionFactory();
+        var session = sessionFactory.openSession();
+        var transaction = session.beginTransaction();
+        session.save(object);
         transaction.commit();
     }
 
-    public static Person getPerson(String ssn){
-        var config = new Configuration().configure().addAnnotatedClass(Person.class);
-        SessionFactory sessionFactory = config.buildSessionFactory();
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        var person = session.get(Person.class, ssn);
+    public static Object getByPrimaryKey(Object clazz, int primaryKey){
+        var config = new Configuration().configure().addAnnotatedClass(clazz.getClass());
+        var sessionFactory = config.buildSessionFactory();
+        var session = sessionFactory.openSession();
+        var transaction = session.beginTransaction();
+        var results = session.get(clazz.getClass(), primaryKey);
         transaction.commit();
-        return person;
+        return results;
     }
 }

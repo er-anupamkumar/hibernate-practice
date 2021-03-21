@@ -7,10 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="hibernate-practice" />
         <module name="HibernatePractice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="hibernate-practice" target="1.5" />
       <module name="HibernatePractice" target="1.5" />
     </bytecodeTargetLevel>
   </component>

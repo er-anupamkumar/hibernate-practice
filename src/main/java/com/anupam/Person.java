@@ -1,6 +1,8 @@
 package com.anupam;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Random;
@@ -9,36 +11,15 @@ import java.util.Random;
 @Data
 @Entity
 @Table(name = "Person_Table")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Person {
-    @Id
-    @Column(name = "p_ssn")
-    private String ssn;
+    @Id @Column(name = "p_ssn")
+    private int ssn;
     @Column(name = "p_fname")
     private String firstname;
     @Column(name = "p_lname")
     private String lastname;
     @Column(name = "p_dob")
     private String dob;
-    //@Transient
-    //private int ssnTrace;
-    public Person(String ssn, String firstname, String lastname, String dob) {
-        this.dob = dob;
-        this.ssn = ssn;
-        this.firstname = firstname;
-        this.lastname = lastname;
-    }
-
-    public Person() {
-        super();
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "ssn='" + ssn + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", dob='" + dob + '\'' +
-                '}';
-    }
 }

@@ -12,8 +12,6 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Laptop {
-
-    @Id
-    private int lid;
+    @Id private int lid;
     private String laptop_name;
 }

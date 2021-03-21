@@ -6,7 +6,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,5 +20,6 @@ public class Student {
     private int rollNumber;
     private String name;
     private int marks;
-    @OneToOne(mappedBy = "laptop") Laptop laptop;
+    @OneToMany List<Laptop> laptops = new ArrayList<Laptop>();
+    //@OneToOne Person person;
 }

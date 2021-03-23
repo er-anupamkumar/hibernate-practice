@@ -15,7 +15,7 @@ public class ApplicationTest {
     @Test
     public void should_save() {
         //Person person = new Person(1387653012,"SSSSAnupam","anand","241095");
-        Laptop laptop = new Laptop(10003,"Dell");
+        Laptop laptop = new Laptop(10003,"Dell",123456799);
         Student student = new Student();
         student.setRollNumber(123456799);
         student.setName("Anupam1");
